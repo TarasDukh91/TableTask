@@ -1,0 +1,28 @@
+$border-color: black;
+$table-background: #F8DF8B;
+$header-text-color: #F8DF8B;
+$paginator-background-color: #E1578A;
+
+.table {
+  width: 100%;
+  border: 2px solid $border-color;
+}
+
+.mat-column-first_name, .mat-column-email, .mat-column-id, .mat-column-last_name {
+  border-left: 2px solid black;
+  background-color: $table-background
+}
+
+.table-header {
+ .mat-column-first_name, .mat-column-email, .mat-column-id, .mat-column-last_name {
+   font-size: 1rem;
+   color: $header-text-color;
+   background-color: #A9333A !important;
+ }
+}
+
+.table-paginator {
+  background-color: $paginator-background-color;
+  font-size: 1rem;
+  color: $header-text-color;
+}

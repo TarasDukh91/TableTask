@@ -1,0 +1,45 @@
+<div class="table-container">
+  <div>
+    <mat-form-field >
+      <input matInput type="text" (keyup)="doFilter($event)" placeholder="Filter">
+    </mat-form-field>
+  </div>
+
+  <table
+    mat-table
+    [dataSource]="dataBase"
+    class="table"
+    matSort>
+
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef  mat-sort-header> No. </th>
+      <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="email">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Email </th>
+      <td mat-cell *matCellDef="let element"> {{element.email}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="first_name">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> FirstName </th>
+      <td mat-cell *matCellDef="let element"> {{element.first_name}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="last_name">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Last Name </th>
+      <td mat-cell *matCellDef="let element"> {{element.last_name}} </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns" class="table-header"></tr>
+    <tr
+    class="table-header-text"
+    mat-row
+    *matRowDef="let row;
+    columns: displayedColumns;"></tr>
+  </table>
+  <mat-paginator
+  class="table-paginator"
+  [pageSize]="3"
+  [pageSizeOptions]="[3, 6, 9]"></mat-paginator>
+</div>
